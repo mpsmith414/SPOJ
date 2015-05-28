@@ -1,0 +1,16 @@
+2738. Number Guessing Game
+
+Here is the rule of the game: The computer generates a number from 000000 to 999999, 
+and you should guess the number.
+Everytime, the computer will tell you the count of all i from 0..5 that guess[i]==target[i] (A). 
+And the count of all (i,j) from (0..5,0..5) that guess[i]==target[j]&&i!=j (B).
+
+If you find a bug, please contact me. 
+
+Solution:
+
+1. find a # that when you put all 6 digit to it you get A0.  This will be test number.
+2. now for every other number fill all 6 digits with it.. # of A is the number of times that number is in the answer.
+3. lets say 000000 gives you A0.  and 111111 gives A1.  We know there is one A in the answer so we can find where
+the A is located by trying 100000, 010000, 001000, etc until we get A1.
+4. do this for every number until you know all of the digits.
